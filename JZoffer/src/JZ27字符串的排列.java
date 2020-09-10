@@ -30,7 +30,7 @@ import java.util.*;
  */
 public class JZ27字符串的排列 {
     public static void main(String[] args) {
-        System.out.println(new JZ27字符串的排列().Permutation("abb"));
+        System.out.println(new JZ27字符串的排列().Permutation("abc"));
     }
 
     public ArrayList<String> Permutation(String str) {

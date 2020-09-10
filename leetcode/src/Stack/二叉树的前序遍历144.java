@@ -74,9 +74,9 @@ public class 二叉树的前序遍历144 {
     }
 
 
-// Recursive
-// Time Complexity: O(n), n is the node number in the tree
-// Space Complexity: O(h), h is the height of the tree
+//// Recursive
+//// Time Complexity: O(n), n is the node number in the tree
+//// Space Complexity: O(h), h is the height of the tree
 //    public List<Integer> preorderTraversal(TreeNode root) {
 //        List<Integer> res = new ArrayList<>();
 //        traversal(res, root);

@@ -1,0 +1,21 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] indexs = new int[2];
+        //一一对应哈希表
+        HashMap<Integer, Integer> hash = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            //containsKey() 方法来检测数据（value）是否存在
+            if (hash.containsKey(nums[i])) {
+                //get()方法，获取key，返回value
+                indexs[0] = hash.get(nums[i]);
+                indexs[1] = i;
+                return indexs;
+            }
+            //值为key ，value为下标
+            hash.put(target - nums[i], i);
+        }
+        return indexs;
+    }
+}
+//runtime:5 ms
+//memory:36.6 MB

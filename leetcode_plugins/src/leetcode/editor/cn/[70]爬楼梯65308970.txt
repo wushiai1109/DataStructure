@@ -1,0 +1,28 @@
+class Solution {
+    private int[] memo;
+
+    //时间复杂度O(n)
+    //空间复杂度O(n)
+    public int climbStairs(int n) {
+
+        if (n <= 0)
+            throw new IllegalArgumentException("n must be greater than zero");
+
+        memo = new int[n + 1];
+        Arrays.fill(memo, -1);
+        return calcWays(n);
+    }
+
+    private int calcWays(int n) {
+
+        if (n == 0 || n == 1)
+            return 1;
+
+        if (memo[n] == -1)
+            memo[n] = calcWays(n - 1) + calcWays(n - 2);
+
+        return memo[n];
+    }
+}
+//runtime:0 ms
+//memory:36.4 MB
