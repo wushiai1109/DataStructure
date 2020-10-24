@@ -97,8 +97,9 @@ public class 电话号码的字母组合17 {
     public List<String> letterCombinations(String digits) {
 
         res = new ArrayList<>();
-        if (digits.equals(""))
+        if (digits.equals("")) {
             return res;
+        }
 
         findCombination(digits, 0, "");
         return res;
@@ -106,18 +107,18 @@ public class 电话号码的字母组合17 {
 
     private void findCombination(String digits, int index, String s) {
 
-        System.out.println(index+":"+s);
-
         if (index == digits.length()) {
             res.add(s);
+            System.out.println(s);
             return;
         }
 
         Character c = digits.charAt(index);
 
         String letters = letterMap[c - '0'];
-        for (int i = 0; i < letters.length(); i++)
+        for (int i = 0; i < letters.length(); i++) {
             findCombination(digits, index + 1, s + letters.charAt(i));
+        }
     }
 
 }

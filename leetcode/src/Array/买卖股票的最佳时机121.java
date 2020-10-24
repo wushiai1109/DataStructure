@@ -23,13 +23,14 @@ package Array;
  */
 public class 买卖股票的最佳时机121 {
     public static void main(String[] args) {
-        int arr[] = {7,1,5,3,6,4};
+        int arr[] = {7, 1, 5, 3, 6, 4};
         System.out.println(new 买卖股票的最佳时机121().maxProfit(arr));
     }
 
     public int maxProfit(int[] prices) {
-        if (prices.length <= 1)
+        if (prices.length <= 1) {
             return 0;
+        }
 
         int min = prices[0], max = 0;
 

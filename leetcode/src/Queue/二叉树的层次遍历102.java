@@ -45,8 +45,9 @@ public class 二叉树的层次遍历102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
 
         ArrayList<List<Integer>> res = new ArrayList<>();
-        if (root == null)
+        if (root == null) {
             return res;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
@@ -59,10 +60,12 @@ public class 二叉树的层次遍历102 {
                 TreeNode node = queue.remove();
                 level.add(node.val);
 
-                if (node.left != null)
+                if (node.left != null) {
                     queue.add(node.left);
-                if (node.right != null)
+                }
+                if (node.right != null) {
                     queue.add(node.right);
+                }
             }
 
             res.add(level);

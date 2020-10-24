@@ -59,11 +59,11 @@ public class 无重复字符的最长子串3__滑动窗口 {
         int res = 0;
 
         while (r + 1 < s.length()) {
-            if (r + 1 < s.length() && freq[s.charAt(r + 1)] == 0)
+            if (freq[s.charAt(r + 1)] == 0) {
                 freq[s.charAt(++r)]++;
-            else
+            } else {
                 freq[s.charAt(l++)]--;
-
+            }
             res = Math.max(res, r - l + 1);
         }
         return res;

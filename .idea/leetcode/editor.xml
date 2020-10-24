@@ -3,11 +3,35 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[1122]数组的相对排序.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[1122]数组的相对排序.java" />
+              <option name="questionId" value="1217" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[1143]最长公共子序列.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[1143]最长公共子序列.java" />
+              <option name="questionId" value="1250" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[11]盛最多水的容器.java">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[11]盛最多水的容器.java" />
               <option name="questionId" value="11" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[121]买卖股票的最佳时机.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[121]买卖股票的最佳时机.java" />
+              <option name="questionId" value="121" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -27,6 +51,22 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[14]最长公共前缀.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[14]最长公共前缀.java" />
+              <option name="questionId" value="14" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[151]翻转字符串里的单词.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[151]翻转字符串里的单词.java" />
+              <option name="questionId" value="151" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[155]最小栈.java">
           <value>
             <LeetcodeEditor>
@@ -43,6 +83,38 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[169]多数元素.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[169]多数元素.java" />
+              <option name="questionId" value="169" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[17]电话号码的字母组合.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[17]电话号码的字母组合.java" />
+              <option name="questionId" value="17" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[190]颠倒二进制位.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[190]颠倒二进制位.java" />
+              <option name="questionId" value="190" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[191]位1的个数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[191]位1的个数.java" />
+              <option name="questionId" value="191" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[1]两数之和.java">
           <value>
             <LeetcodeEditor>
@@ -51,11 +123,43 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[200]岛屿数量.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[200]岛屿数量.java" />
+              <option name="questionId" value="200" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[206]反转链表.java">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[206]反转链表.java" />
               <option name="questionId" value="206" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[221]最大正方形.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[221]最大正方形.java" />
+              <option name="questionId" value="221" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[229]求众数 II.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[229]求众数 II.java" />
+              <option name="questionId" value="229" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[231]2的幂.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[231]2的幂.java" />
+              <option name="questionId" value="231" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -91,11 +195,179 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[322]零钱兑换.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[322]零钱兑换.java" />
+              <option name="questionId" value="322" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[338]比特位计数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[338]比特位计数.java" />
+              <option name="questionId" value="338" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[33]搜索旋转排序数组.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[33]搜索旋转排序数组.java" />
+              <option name="questionId" value="33" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[344]反转字符串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[344]反转字符串.java" />
+              <option name="questionId" value="344" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[387]字符串中的第一个唯一字符.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[387]字符串中的第一个唯一字符.java" />
+              <option name="questionId" value="387" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[3]无重复字符的最长子串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[3]无重复字符的最长子串.java" />
+              <option name="questionId" value="3" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[41]缺失的第一个正数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[41]缺失的第一个正数.java" />
+              <option name="questionId" value="41" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[433]最小基因变化.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[433]最小基因变化.java" />
+              <option name="questionId" value="433" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[493]翻转对.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[493]翻转对.java" />
+              <option name="questionId" value="493" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[49]字母异位词分组.java">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[49]字母异位词分组.java" />
               <option name="questionId" value="49" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[50]Pow(x, n).java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[50]Pow(x, n).java" />
+              <option name="questionId" value="50" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[515]在每个树行中找最大值.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[515]在每个树行中找最大值.java" />
+              <option name="questionId" value="515" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[51]N 皇后.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[51]N 皇后.java" />
+              <option name="questionId" value="51" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[52]N皇后 II.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[52]N皇后 II.java" />
+              <option name="questionId" value="52" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[541]反转字符串 II.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[541]反转字符串 II.java" />
+              <option name="questionId" value="541" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[55]跳跃游戏.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[55]跳跃游戏.java" />
+              <option name="questionId" value="55" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[56]合并区间.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[56]合并区间.java" />
+              <option name="questionId" value="56" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[58]最后一个单词的长度.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[58]最后一个单词的长度.java" />
+              <option name="questionId" value="58" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[62]不同路径.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[62]不同路径.java" />
+              <option name="questionId" value="62" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[63]不同路径 II.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[63]不同路径 II.java" />
+              <option name="questionId" value="63" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[69]x 的平方根.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[69]x 的平方根.java" />
+              <option name="questionId" value="69" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[709]转换成小写字母.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[709]转换成小写字母.java" />
+              <option name="questionId" value="742" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -107,11 +379,35 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[78]子集.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[78]子集.java" />
+              <option name="questionId" value="78" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[84]柱状图中最大的矩形.java">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[84]柱状图中最大的矩形.java" />
               <option name="questionId" value="84" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[8]字符串转换整数 (atoi).java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[8]字符串转换整数 (atoi).java" />
+              <option name="questionId" value="8" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[917]仅仅反转字母.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode_plugins/src/leetcode/editor/cn/[917]仅仅反转字母.java" />
+              <option name="questionId" value="953" />
             </LeetcodeEditor>
           </value>
         </entry>

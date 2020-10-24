@@ -41,11 +41,16 @@ import java.util.*;
 public class 单词接龙127 {
 
     public static void main(String[] args) {
-//        List<String> wordList = Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
-        String[] str = {"hot", "dot", "dog", "lot", "log", "cog"};
+        String[] str = {"si","go","se","cm","so","ph","mt","db","mb","sb","kr","ln","tm","le","av","sm","ar","ci","ca","br","ti","ba","to","ra","fa","yo","ow","sn","ya","cr","po","fe","ho","ma","re","or","rn","au","ur","rh","sr","tc","lt","lo","as","fr","nb","yb","if","pb","ge","th","pm","rb","sh","co","ga","li","ha","hz","no","bi","di","hi","qa","pi","os","uh","wm","an","me","mo","na","la","st","er","sc","ne","mn","mi","am","ex","pt","io","be","fm","ta","tb","ni","mr","pa","he","lr","sq","ye"};
         List<String> wordList = new ArrayList<>();
         wordList.addAll(Arrays.asList(str));
-        System.out.println(new 单词接龙127().ladderLength("hit", "cog", wordList));
+        System.out.println(new 单词接龙127().ladderLength("qa", "sq", wordList));
+
+//        List<String> wordList = Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
+//        String[] str = {"hot", "dot", "dog", "lot", "log", "cog"};
+//        List<String> wordList = new ArrayList<>();
+//        wordList.addAll(Arrays.asList(str));
+//        System.out.println(new 单词接龙127().ladderLength("hit", "cog", wordList));
     }
 
 //    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -92,8 +97,9 @@ public class 单词接龙127 {
 /// Space Complexity: O(n)
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
 
-        if (!wordList.contains(endWord))
+        if (!wordList.contains(endWord)) {
             return 0;
+        }
 
         // bi-derectional-bfs
         LinkedList<String> qStart = new LinkedList<>();
@@ -126,29 +132,63 @@ public class 单词接龙127 {
 
             // check intersection
             int res = Integer.MAX_VALUE;
-            for (String word : wordList)
-                if (hStart.containsKey(word) && hEnd.containsKey(word))
+            for (String word : wordList) {
+                if (hStart.containsKey(word) && hEnd.containsKey(word)) {
                     res = Integer.min(res, hStart.get(word) + hEnd.get(word) - 1);
+                }
+            }
 
-            if (res != Integer.MAX_VALUE)
+            if (res != Integer.MAX_VALUE) {
                 return res;
+            }
         }
-
         return 0;
     }
 
     private boolean similar(String word1, String word2) {
 
-        if (word1.length() != word2.length() || word1.equals(word2))
+        if (word1.length() != word2.length() || word1.equals(word2)) {
             throw new IllegalArgumentException();
+        }
 
         int diff = 0;
-        for (int i = 0; i < word1.length(); i++)
+        for (int i = 0; i < word1.length(); i++) {
             if (word1.charAt(i) != word2.charAt(i)) {
                 diff++;
-                if (diff > 1)
+                if (diff > 1) {
                     return false;
+                }
             }
+        }
         return true;
     }
+
+//    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+//        dfs(new HashSet<String>(), 0, beginWord, endWord, wordList);
+//        return (minStepCount == Integer.MAX_VALUE) ? 0 : minStepCount;
+//    }
+//
+//    int minStepCount = Integer.MAX_VALUE;
+//
+//    private void dfs(HashSet<String> hashSet, int stepCount, String cur, String end, List<String> wordList) {
+//        if (cur.equals(end)) {
+//            minStepCount = Math.min(stepCount+1, minStepCount);
+//        }
+//        for (String str : wordList) {
+//            int diff = 0;
+//            for (int i = 0; i < str.length(); i++) {
+//                if (cur.charAt(i) != str.charAt(i)) {
+//                    if (++diff > 1) {
+//                        break;
+//                    }
+//                }
+//            }
+//            if (diff == 1 && !hashSet.contains(str)) {
+//                hashSet.add(str);
+//                dfs(hashSet, stepCount + 1, str, end, wordList);
+//                hashSet.remove(str);
+//            }
+//        }
+//    }
+
 }
