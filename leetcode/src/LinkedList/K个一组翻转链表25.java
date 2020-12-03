@@ -42,13 +42,14 @@ public class K个一组翻转链表25 {
 
         while (true) {
             int count = 0;
+            //找到第k个结点
             while (tail != null && count != k) {
                 count++;
                 tail = tail.next;
             }
-
-            if (tail == null)
+            if (tail == null) {
                 break;
+            }
 
             ListNode head1 = pre.next;
 

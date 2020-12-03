@@ -42,6 +42,7 @@ package leetcode.editor.cn;
 
 import java.time.Instant;
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Date;
 
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -63,8 +64,8 @@ class 滑动窗口最大值 {
     //        return output;
     //    }
     //复杂度分析
-    //时间复杂度：{O}(N k)O(Nk)。其中 N 为数组中元素个数。
-    //空间复杂度：{O}(N - k + 1)O(N−k+1)，用于输出数组。
+    //时间复杂度：O(Nk)。其中 N 为数组中元素个数。
+    //空间复杂度：O(N−k+1)，用于输出数组。
 //    public int[] maxSlidingWindow(int[] nums, int k) {
 //        int n = nums.length;
 //        if (n * k == 0) {
@@ -82,6 +83,11 @@ class 滑动窗口最大值 {
 //        return output;
 //    }
 
+    public static void main(String[] args) {
+        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+        System.out.println(Arrays.toString(nums));
+        System.out.println(Arrays.toString(new 滑动窗口最大值().maxSlidingWindow(nums, 3)));
+    }
 
     //方法二：双向队列
     //如何优化时间复杂度呢？首先想到的是使用堆，因为在最大堆中 heap[0] 永远是最大的元素。
@@ -100,21 +106,8 @@ class 滑动窗口最大值 {
     //将 deque[0] 添加到输出中。
     //返回输出数组。
 
-    ArrayDeque<Integer> deq = new ArrayDeque<Integer>();
+    ArrayDeque<Integer> deq = new ArrayDeque<>();
     int[] nums;
-
-    //清理双向队列
-    public void clean_deque(int i, int k) {
-        //只保留当前滑动窗口中有的元素的索引
-        if (!deq.isEmpty() && deq.getFirst() == i - k) {
-            deq.removeFirst();
-        }
-
-        //移除比当前元素小的所有元素，它们不可能是最大的。
-        while (!deq.isEmpty() && nums[i] > nums[deq.getLast()]) {
-            deq.removeLast();
-        }
-    }
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
@@ -127,20 +120,20 @@ class 滑动窗口最大值 {
 
         //将当前元素添加到双向队列中
         this.nums = nums;
-        int max_idx = 0;
+        int maxId = 0;
         for (int i = 0; i < k; i++) {
             clean_deque(i, k);
             deq.addLast(i);
+            System.out.println(deq);
             //找到当前最大值的下标
-            if (nums[i] > nums[max_idx]) {
-                max_idx = i;
+            if (nums[i] > nums[maxId]) {
+                maxId = i;
             }
         }
 
         int[] output = new int[n - k + 1];
         //将第一个滑动窗口中最大值赋值给output[0]
-        output[0] = nums[max_idx];
-
+        output[0] = nums[maxId];
 
         for (int i = k; i < n; i++) {
             clean_deque(i, k);
@@ -148,6 +141,19 @@ class 滑动窗口最大值 {
             output[i - k + 1] = nums[deq.getFirst()];
         }
         return output;
+    }
+
+    //清理双向队列
+    public void clean_deque(int i, int k) {
+        //只保留当前滑动窗口中有的元素的索引
+        if (!deq.isEmpty() && deq.getFirst() == i - k) {
+            deq.removeFirst();
+        }
+
+        //移除比当前元素小的所有元素，它们不可能是最大的。
+        while (!deq.isEmpty() && nums[i] > nums[deq.getLast()]) {
+            deq.removeLast();
+        }
     }
 
 }

@@ -57,6 +57,24 @@ public class 分发饼干455 {
         return res;
     }
 
+//    public int findContentChildren(int[] g, int[] s) {
+//
+//        Arrays.sort(g);
+//        Arrays.sort(s);
+//
+//        int gi = 0, si = 0;
+//        int res = 0;
+//        while (gi <= g.length - 1 && si <= s.length - 1) {
+//            if (s[si] >= g[gi]) {
+//                res++;
+//                gi++;
+//            }
+//            si++;
+//        }
+//
+//        return res;
+//    }
+
     public static void main(String[] args) {
 
         int g1[] = {1, 2, 3};

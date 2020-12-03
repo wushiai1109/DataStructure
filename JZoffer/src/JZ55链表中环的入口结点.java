@@ -31,6 +31,7 @@ public class JZ55链表中环的入口结点 {
         if (fast == null || fast.next == null) {
             return null;
         }
+
         //slow从链表头出发
         slow = pHead;
         //fast从相遇点出发

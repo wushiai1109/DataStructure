@@ -25,37 +25,39 @@ import java.util.Map;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class 有效的字母异位词 {
-    public boolean isAnagram(String s, String t) {
-//        if (s.length() != t.length()) {
-//            return false;
-//        }
-//        int[] alpha = new int[26];
-//        for (int i = 0; i < s.length(); i++) {
-//            alpha[s.charAt(i) - 'a']++;
-//            alpha[t.charAt(i) - 'a']--;
-//        }
-//        for (int i = 0; i < 26; i++) {
-//            if (alpha[i] != 0) {
-//                return false;
-//            }
-//        }
-//        return true;
-
-        Map<Character, Integer> map = new HashMap<>();
-        for (char ch : s.toCharArray()) {
-            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
         }
-        for (char ch : t.toCharArray()) {
-            Integer count = map.get(ch);
-            if (count == null) {
+        int[] alpha = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            alpha[s.charAt(i) - 'a']++;
+            alpha[t.charAt(i) - 'a']--;
+        }
+        for (int i = 0; i < 26; i++) {
+            if (alpha[i] != 0) {
                 return false;
-            } else if (count > 1) {
-                map.put(ch, count - 1);
-            } else {
-                map.remove(ch);
             }
         }
-        return map.isEmpty();
+        return true;
     }
+
+//    public boolean isAnagram(String s, String t) {
+//        Map<Character, Integer> map = new HashMap<>();
+//        for (char ch : s.toCharArray()) {
+//            map.put(ch, map.getOrDefault(ch, 0) + 1);
+//        }
+//        for (char ch : t.toCharArray()) {
+//            Integer count = map.get(ch);
+//            if (count == null) {
+//                return false;
+//            } else if (count > 1) {
+//                map.put(ch, count - 1);
+//            } else {
+//                map.remove(ch);
+//            }
+//        }
+//        return map.isEmpty();
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)

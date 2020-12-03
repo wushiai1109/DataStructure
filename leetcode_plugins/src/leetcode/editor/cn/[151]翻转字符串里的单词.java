@@ -60,72 +60,103 @@ import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class 翻转字符串里的单词151 {
-    //在指定 String 数组B的每个元素之间串联指定的分隔符 A，从而产生单个串联的字符串
-    //string [] tmpStr={abc,def,ghi};
-    //string jn = string.Join(“-“, tmpStr);
-    //此时jn=”abc-def-ghi”;
-
-
-    //O(n) N为输入字符串的长度
-    //O(n)
-
-    public String reverseWords(String s) {
+//    //在指定 String 数组B的每个元素之间串联指定的分隔符 A，从而产生单个串联的字符串
+//    //string [] tmpStr={abc,def,ghi};
+//    //string jn = string.Join(“-“, tmpStr);
+//    //此时jn=”abc-def-ghi”;
+//
+//
+//    //O(n) N为输入字符串的长度
+//    //O(n)
+//
+//    public String reverseWords(String s) {
+////        // 除去开头和末尾的空白字符
+////        s = s.trim();
+////        // 正则匹配连续的空白字符作为分隔符分割
+////        List<String> wordList = Arrays.asList(s.split("\\s+"));
+////        Collections.reverse(wordList);
+////        return String.join(" ", wordList);
+//
 //        // 除去开头和末尾的空白字符
 //        s = s.trim();
-//        // 正则匹配连续的空白字符作为分隔符分割
-//        List<String> wordList = Arrays.asList(s.split("\\s+"));
-//        Collections.reverse(wordList);
-//        return String.join(" ", wordList);
+//        // 将字符串间多余的空白字符去除
+//        int left = 0, right = s.length() - 1;
+//        StringBuilder sb = new StringBuilder();
+//        while (left <= right) {
+//            char c = s.charAt(left);
+//            if (c != ' ') {
+//                sb.append(c);
+//            } else if (sb.charAt(sb.length() - 1) != ' ') {
+//                sb.append(c);
+//            }
+//            ++left;
+//        }
+//
+////        List<String> wordList = Arrays.asList(sb.toString().split(" "));
+////        Collections.reverse(wordList);
+////        return String.join(" ", wordList);
+//
+//        // 翻转字符串
+//        reverse(sb, 0, sb.length() - 1);
+//        // 翻转每个单词
+//        reverseEachWord(sb);
+//        return sb.toString();
+//    }
+//
+//    public void reverse(StringBuilder sb, int left, int right) {
+//        while (left < right) {
+//            char temp = sb.charAt(left);
+//            sb.setCharAt(left++, sb.charAt(right));
+//            sb.setCharAt(right--, temp);
+//        }
+//    }
+//
+//    public void reverseEachWord(StringBuilder sb) {
+//        int n = sb.length();
+//        int start = 0, end = 0;
+//
+//        while (start < n) {
+//            // 循环至单词的末尾
+//            while (end < n && sb.charAt(end) != ' ') {
+//                ++end;
+//            }
+//            // 翻转单词
+//            reverse(sb, start, end - 1);
+//            // 更新start，去找下一个单词
+//            start = end + 1;
+//            ++end;
+//        }
+//    }
 
-        // 除去开头和末尾的空白字符
+    //String.Join 方法 (A (String), B (String[]));
+    //在指定 String 数组B的每个元素之间串联指定的分隔符 A，从而产生单个串联的字符串
+    // public String reverseWords(String s) {
+    //    String [] worlds = s.trim().split(" ");
+    //     Collections.reverse(Arrays.asList(worlds));
+    //     return String.join(" ", worlds);
+    // }
+
+    public String reverseWords(String s) {
         s = s.trim();
-        // 将字符串间多余的空白字符去除
-        int left = 0, right = s.length() - 1;
-        StringBuilder sb = new StringBuilder();
-        while (left <= right) {
-            char c = s.charAt(left);
-            if (c != ' ') {
-                sb.append(c);
-            } else if (sb.charAt(sb.length() - 1) != ' ') {
-                sb.append(c);
+        StringBuilder ret = new StringBuilder();
+        int l = s.length() - 1;
+        while (l >= 0) {
+            int word = l;
+            while (l >= 0 && s.charAt(l) != ' ') {
+                l--;
             }
-            ++left;
-        }
-
-//        List<String> wordList = Arrays.asList(sb.toString().split(" "));
-//        Collections.reverse(wordList);
-//        return String.join(" ", wordList);
-
-        // 翻转字符串
-        reverse(sb, 0, sb.length() - 1);
-        // 翻转每个单词
-        reverseEachWord(sb);
-        return sb.toString();
-    }
-
-    public void reverse(StringBuilder sb, int left, int right) {
-        while (left < right) {
-            char temp = sb.charAt(left);
-            sb.setCharAt(left++, sb.charAt(right));
-            sb.setCharAt(right--, temp);
-        }
-    }
-
-    public void reverseEachWord(StringBuilder sb) {
-        int n = sb.length();
-        int start = 0, end = 0;
-
-        while (start < n) {
-            // 循环至单词的末尾
-            while (end < n && sb.charAt(end) != ' ') {
-                ++end;
+//            for (int p = 0; p < word - l; p++) {
+//                ret.append(s.charAt(l + p + 1));
+//            }
+            ret.append(s.substring(l+1,word+1));
+            while (l >= 0 && s.charAt(l) == ' ') {
+                l--;
             }
-            // 翻转单词
-            reverse(sb, start, end - 1);
-            // 更新start，去找下一个单词
-            start = end + 1;
-            ++end;
+            s = s.trim();
+            ret.append(" ");
         }
+        return ret.toString().trim();
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)

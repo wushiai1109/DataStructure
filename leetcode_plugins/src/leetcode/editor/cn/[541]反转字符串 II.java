@@ -17,6 +17,11 @@ package leetcode.editor.cn;//给定一个字符串 s 和一个整数 k，你需�
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class 反转字符串two {
+
+    public static void main(String[] args) {
+        System.out.println(new 反转字符串two().reverseStr("abcdefg",2));
+    }
+
     //Time Complexity O（n）
     //Space Complexity O（n）
     public String reverseStr(String s, int k) {

@@ -91,7 +91,7 @@ public class 单词接龙127 {
 //    }
 
 
-    /// Bi-directional BFS
+    /// Bi-directional BFS 双向BFS
 /// No need to calculate all pairs similarity
 /// Time Complexity: O(n*n)
 /// Space Complexity: O(n)
@@ -130,7 +130,7 @@ public class 单词接龙127 {
                 }
             }
 
-            // check intersection
+            // check intersection相交
             int res = Integer.MAX_VALUE;
             for (String word : wordList) {
                 if (hStart.containsKey(word) && hEnd.containsKey(word)) {

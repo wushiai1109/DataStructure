@@ -31,8 +31,9 @@ public class 反转链表II92 {
         dummyHead.next = head;
         ListNode pre = dummyHead;
         //找到m前的那个结点
-        for (int i = 1; i < m; i++)
+        for (int i = 1; i < m; i++) {
             pre = pre.next;
+        }
         //head指向需要更换的第一个数
         head = pre.next;
         for (int i = m; i < n; i++) {

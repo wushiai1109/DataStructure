@@ -17,6 +17,9 @@ package leetcode.editor.cn;//给定一个仅包含大小写字母和空格 ' ' �
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class 最后一个单词的长度58 {
+    public static void main(String[] args) {
+        System.out.println(new 最后一个单词的长度58().lengthOfLastWord("Hello World"));
+    }
     public int lengthOfLastWord(String s) {
         if (s == null || s.length() == 0) {
             return 0;

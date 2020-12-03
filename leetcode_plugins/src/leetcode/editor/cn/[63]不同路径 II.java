@@ -29,15 +29,24 @@ package leetcode.editor.cn;//一个机器人位于一个 m x n 网格的左上�
 // 👍 414 👎 0
 
 
+import javax.print.DocFlavor;
+import java.util.Arrays;
+
 //leetcode submit region begin(Prohibit modification and deletion)
-class 不同路径63 {
+class 不同路径two63 {
+
+    public static void main(String[] args) {
+        int[][] obstacleGrid = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
+        System.out.println(new 不同路径two63().uniquePathsWithObstacles(obstacleGrid));
+    }
+
     //假设我们定义到达右下角的走法数为 f(m, n), 因为右下角只能由它上方或者左方的格子走过去，因此可以很容易的写出递归求解式，
     // 即 f(m, n) = f(m - 1, n) + f(m, n - 1)，最后加上递归终止条件
     //然而事情并木有结束～ 因为这样自底向上的递归会存在大量的重复计算，所以我们将其改写为在二维数组中自顶向下的递推即可，
     //即 dp[i, j] = dp[i - 1, j] + dp[i, j - 1]。
 
-    //dp[i][j] 表示走到格子 (i, j)(i,j) 的方法数。
-    //网格 (i, j)(i,j) 上有障碍物，则 dp[i][j]值为0，表示走到该格子的方法数为0
+    //dp[i][j] 表示走到格子(i,j)的方法数。
+    //网格(i,j)上有障碍物，则 dp[i][j]值为0，表示走到该格子的方法数为0
     //否则网格 (i, j)可以从网格(i - 1, j)或者网格(i, j - 1)走过来，
     //因此走到该格子的方法数为走到网格 (i - 1, j)和网格 (i, j - 1)的方法数之和，即 dp[i, j] = dp[i - 1, j] + dp[i, j - 1]。
 
@@ -45,6 +54,7 @@ class 不同路径63 {
         if (obstacleGrid == null || obstacleGrid.length == 0) {
             return 0;
         }
+
         // 定义 dp 数组并初始化第 1 行和第 1 列。
         //第 1 列的格子只有从其上边格子到此格子这一种走法，因此初始化 dp[i][0] 值为 1，存在障碍物时为 0；
         //第 1 行的格子只有从其左边格子此格子这一种走法，因此初始化 dp[0][j] 值为 1，存在障碍物时为 0。
