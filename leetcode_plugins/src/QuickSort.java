@@ -29,16 +29,18 @@ public class QuickSort {
         int pivot = end, counter = begin;
         for (int i = begin; i < end; i++) {
             if (array[i] < array[pivot]) {
-                int temp = array[counter];
-                array[counter] = array[i];
-                array[i] = temp;
+                swap(array, i, counter);
                 counter++;
             }
         }
-        int temp = array[pivot];
-        array[pivot] = array[counter];
-        array[counter] = temp;
+        swap(array, pivot, counter);
         return counter;
+    }
+
+    public void swap(int[] arr, int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
     }
 
 }
