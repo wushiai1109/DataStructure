@@ -27,9 +27,12 @@
 public class JZ31整数中1出现的次数_从1到n整数 {
 
     public static void main(String[] args) {
-        System.out.println(new JZ31整数中1出现的次数_从1到n整数().NumberOf1Between1AndN_Solution(13));
+        System.out.println(new JZ31整数中1出现的次数_从1到n整数().NumberOf1Between1AndN_Solution(133));
     }
 
+    //归纳个位上1出现的个数为：n/10 * 1+(n%10!=0 ? 1 : 0)
+    //归纳十位上1出现的个数为：(n / 100) * 10 + (if(k > 19) 10 else if(k < 10) 0 else k - 10 + 1)
+    //归纳百位上出现1的个数：设k = n % 1000，归纳式为：(n / 1000) * 100 + (if(k >199) 100 else if(k < 100) 0 else k - 100 + 1)
     public int NumberOf1Between1AndN_Solution(int n) {
         if (n <= 0) {
             return 0;

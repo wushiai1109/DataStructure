@@ -30,6 +30,7 @@ public class JZ29最小的K个数 {
                 return o2.compareTo(o1);
             }
         });
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, (o1, o2) -> o2.compareTo(o1));
         for (int value : input) {
             if (maxHeap.size() != k) {
                 maxHeap.offer(value);

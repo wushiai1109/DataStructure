@@ -69,7 +69,7 @@ public class JZ33丑数 {
     }
 
     public int GetUglyNumber_Solution(int index) {
-//        // 0-6的丑数分别为0-6
+//        // 1-6的丑数分别为1-6
 //        if (index < 7) {
 //            return index;
 //        }

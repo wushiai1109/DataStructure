@@ -22,7 +22,7 @@ import java.util.Comparator;
 public class JZ32把数组排成最小的数 {
 
     public static void main(String[] args) {
-        int [] arr ={3,32,321};
+        int [] arr ={32,3,321};
         System.out.println(new JZ32把数组排成最小的数().PrintMinNumber(arr));
     }
 
@@ -36,6 +36,7 @@ public class JZ32把数组排成最小的数 {
         for (int i = 0; i < len; i++) {
             str[i] = String.valueOf(numbers[i]);
         }
+        System.out.println(Arrays.toString(str));
         Arrays.sort(str, new Comparator<String>() {
             @Override
             public int compare(String s1, String s2) {
@@ -46,6 +47,7 @@ public class JZ32把数组排成最小的数 {
                 return c1.compareTo(c2);
             }
         });
+        System.out.println(Arrays.toString(str));
         for (int i = 0; i < len; i++) {
             sb.append(str[i]);
         }
