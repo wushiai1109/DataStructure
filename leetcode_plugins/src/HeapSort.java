@@ -46,13 +46,6 @@ public class HeapSort {
         }
     }
 
-    /**
-     * 交换元素
-     *
-     * @param arr
-     * @param a
-     * @param b
-     */
     public static void swap(int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];

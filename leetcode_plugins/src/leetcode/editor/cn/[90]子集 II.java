@@ -23,7 +23,12 @@ import java.util.Arrays;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class 子集two {
+class 子集90two {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 2};
+        System.out.println(new 子集90two().subsetsWithDup(nums));
+    }
+
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums == null) {
@@ -36,11 +41,7 @@ class 子集two {
 
     private void backtrack(int index, int[] nums, List<List<Integer>> res, ArrayList<Integer> tmp) {
 
-        if (index == nums.length) {
-            res.add(new ArrayList<>(tmp));
-            return;
-        }
-
+        res.add(new ArrayList<>(tmp));
         for (int i = index; i < nums.length; i++) {
             //和上个数字相等就跳过
             if (i > index && nums[i] == nums[i - 1]) {

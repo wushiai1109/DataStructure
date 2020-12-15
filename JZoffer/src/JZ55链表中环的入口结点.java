@@ -21,6 +21,7 @@ public class JZ55链表中环的入口结点 {
         ListNode slow = pHead;
         ListNode fast = pHead;
 
+        //fast追上slow的点或者null
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -28,6 +29,7 @@ public class JZ55链表中环的入口结点 {
                 break;
             }
         }
+        //判断是否无环
         if (fast == null || fast.next == null) {
             return null;
         }
@@ -41,4 +43,10 @@ public class JZ55链表中环的入口结点 {
         }
         return slow;
     }
+
+    //fast:a+b+c
+    //slow:a+c
+    //fast相遇slow时，a+b+c = 2(a+c) --> b = a + c
+    //a=b-c
+
 }
