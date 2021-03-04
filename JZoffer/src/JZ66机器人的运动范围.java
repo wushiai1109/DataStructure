@@ -28,9 +28,9 @@ public class JZ66机器人的运动范围 {
 
     private int numSum(int i) {
         int sum = 0;
-        do{
-            sum+=i%10;
-        }while ((i/=10)!=0);
+        do {
+            sum += i % 10;
+        } while ((i /= 10) != 0);
         return sum;
     }
 }

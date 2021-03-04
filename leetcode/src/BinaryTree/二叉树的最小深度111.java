@@ -33,19 +33,22 @@ public class 二叉树的最小深度111 {
 
 
     public int minDepth(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
 
-        if (root.left == null && root.right == null)
+        if (root.left == null && root.right == null) {
             return 1;
+        }
 
-        int ret = Integer.MAX_VALUE;
-        if (root.left != null)
-            ret = Math.min(ret, minDepth(root.left) + 1);
+        int res = Integer.MAX_VALUE;
+        if (root.left != null) {
+            res = Math.min(res, minDepth(root.left) + 1);
+        }
+        if (root.right != null) {
+            res = Math.min(res, minDepth(root.right) + 1);
+        }
 
-        if (root.right != null)
-            ret = Math.min(ret, minDepth(root.right) + 1);
-
-        return ret;
+        return res;
     }
 }

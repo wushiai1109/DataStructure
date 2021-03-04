@@ -19,9 +19,9 @@ public class JZ34第一个只出现一次的字符 {
             map.put(chars[i], i);
             countMap.put(chars[i], countMap.getOrDefault(chars[i], 0) + 1);
         }
-        for (int i = 0; i < chars.length; i++) {
-            if (countMap.get(chars[i]) == 1) {
-                return map.get(chars[i]);
+        for (char aChar : chars) {
+            if (countMap.get(aChar) == 1) {
+                return map.get(aChar);
             }
         }
 

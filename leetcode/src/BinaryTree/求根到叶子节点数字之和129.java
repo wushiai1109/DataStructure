@@ -15,7 +15,7 @@ package BinaryTree;
  * <p>
  * 输入: [1,2,3]
  * 1
- * / \
+ * /  \
  * 2   3
  * 输出: 25
  * 解释:
@@ -25,11 +25,11 @@ package BinaryTree;
  * 示例 2:
  * <p>
  * 输入: [4,9,0,5,1]
- * 4
+ *   4
+ *  / \
+ *  9   0
  * / \
- * 9   0
- *  / \
- * 5   1
+ * 5  1
  * 输出: 1026
  * 解释:
  * 从根到叶子节点路径 4->9->5 代表数字 495.
@@ -56,11 +56,13 @@ public class 求根到叶子节点数字之和129 {
     }
 
     public void sumNumbers(TreeNode root, int n) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
         int val = (n * 10 + root.val);
-        if (root.left == null && root.right == null)
+        if (root.left == null && root.right == null) {
             sum += val;
+        }
 
         sumNumbers(root.left, val);
         sumNumbers(root.right, val);

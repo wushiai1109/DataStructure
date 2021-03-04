@@ -22,6 +22,15 @@ public class JZ41和为S的连续正数序列 {
         //滑动窗口，两指针
         int slow = 1, fast = 2;
         while (slow < fast) {
+            //等差数列
+            //通项 Tn = a + (n – 1)d
+            //n项和 = (2a+(n-1)d) * n / 2
+            //或
+            //n项和 = (首项+尾项)*项数 / 2
+            //等比数列
+            //通项 Tn = aR^(n – 1)
+            //n项和 = a (1 - R^n) / (1 - R)
+            //如 -1 < R < 1，可求得"无限项之和"=a / (1-R)
             //由于是连续的，差为1的一个序列，那么求和公式是(a0+an)*n/2
             int cur = (slow + fast) * (fast - slow + 1) / 2;
             if (cur == sum) {

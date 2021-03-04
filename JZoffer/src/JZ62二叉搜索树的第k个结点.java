@@ -32,8 +32,9 @@ public class JZ62二叉搜索树的第k个结点 {
             } else {
                 node = stack.pop();
                 count++;
-                if (count == k)
+                if (count == k) {
                     return node;
+                }
                 node = node.right;
             }
         } while (node != null || !stack.isEmpty());

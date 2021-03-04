@@ -21,7 +21,7 @@ public class 电话号码的字母组合17 {
     public static void main(String[] args) {
 //        System.out.println(new Backtracking回溯.电话号码的字母组合17().letterCombinations("23"));
         List<String> list = new 电话号码的字母组合17().letterCombinations("23");
-        for (String s:list) {
+        for (String s : list) {
             System.out.println(s);
         }
     }
@@ -97,7 +97,7 @@ public class 电话号码的字母组合17 {
     public List<String> letterCombinations(String digits) {
 
         res = new ArrayList<>();
-        if (digits.equals("")) {
+        if ("".equals(digits)) {
             return res;
         }
 
@@ -113,7 +113,7 @@ public class 电话号码的字母组合17 {
             return;
         }
 
-        Character c = digits.charAt(index);
+        char c = digits.charAt(index);
 
         String letters = letterMap[c - '0'];
         for (int i = 0; i < letters.length(); i++) {

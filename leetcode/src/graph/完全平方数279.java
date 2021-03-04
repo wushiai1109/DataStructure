@@ -44,9 +44,11 @@ public class 完全平方数279 {
         int[] mem = new int[n + 1];
         Arrays.fill(mem, Integer.MAX_VALUE);
         mem[0] = 0;
-        for (int i = 1; i <= n; i++)
-            for (int j = 1; i - j * j >= 0; j++)
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; i - j * j >= 0; j++) {
                 mem[i] = Math.min(mem[i], mem[i - j * j] + 1);
+            }
+        }
 
         return mem[n];
     }

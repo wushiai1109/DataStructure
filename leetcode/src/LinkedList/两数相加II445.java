@@ -51,10 +51,12 @@ public class 两数相加II445 {
         ListNode ret = null;
         while (!s1.isEmpty() || !s2.isEmpty() || count != 0) {
             int a1 = 0, a2 = 0;
-            if (!s1.isEmpty())
+            if (!s1.isEmpty()) {
                 a1 = s1.removeFirst();
-            if (!s2.isEmpty())
+            }
+            if (!s2.isEmpty()) {
                 a2 = s2.removeFirst();
+            }
             count = (a1 + a2 + count) / 10;
 
             ListNode curNode = new ListNode((a1 + a2 + count) % 10);

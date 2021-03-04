@@ -54,15 +54,18 @@ public class 二叉搜索树中第K小的元素230 {
     }
 
     public TreeNode kthSmallestNode(TreeNode root, int k) {
-        if (root == null)
+        if (root == null) {
             return null;
+        }
 
         TreeNode res = kthSmallestNode(root.left, k);
-        if (res != null)
+        if (res != null) {
             return res;
+        }
 
-        if (++index == k)
+        if (++index == k) {
             return root;
+        }
 
         return kthSmallestNode(root.right, k);
 

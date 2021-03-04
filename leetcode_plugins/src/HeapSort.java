@@ -14,6 +14,8 @@ public class HeapSort {
         System.out.println(Arrays.toString(array));
     }
 
+    //Time Complexity:O(nlogn)
+    //Space Complexity：O(1)
     public void heapSort(int[] array) {
         if (array.length == 0) {
             return;

@@ -17,32 +17,53 @@ public class JZ55链表中环的入口结点 {
     }
 
     public ListNode EntryNodeOfLoop(ListNode pHead) {
-
-        ListNode slow = pHead;
-        ListNode fast = pHead;
-
-        //fast追上slow的点或者null
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (fast == slow) {
-                break;
-            }
-        }
-        //判断是否无环
-        if (fast == null || fast.next == null) {
+        if (pHead.next == null || pHead.next.next == null) {
             return null;
         }
-
-        //slow从链表头出发
-        slow = pHead;
-        //fast从相遇点出发
-        while (fast != slow) {
-            fast = fast.next;
+        ListNode slow = pHead.next;
+        ListNode fast = pHead.next.next;
+        while (fast != null) {
+            if (fast == slow) {
+                fast = pHead;
+                while (fast != slow) {
+                    fast = fast.next;
+                    slow = slow.next;
+                }
+                return fast;
+            }
             slow = slow.next;
+            fast = fast.next.next;
         }
-        return slow;
+        return null;
     }
+
+//    public ListNode EntryNodeOfLoop(ListNode pHead) {
+//
+//        ListNode slow = pHead;
+//        ListNode fast = pHead;
+//
+//        //fast追上slow的点或者null
+//        while (fast != null && fast.next != null) {
+//            slow = slow.next;
+//            fast = fast.next.next;
+//            if (fast == slow) {
+//                break;
+//            }
+//        }
+//        //判断是否无环
+//        if (fast == null || fast.next == null) {
+//            return null;
+//        }
+//
+//        //slow从链表头出发
+//        slow = pHead;
+//        //fast从相遇点出发
+//        while (fast != slow) {
+//            fast = fast.next;
+//            slow = slow.next;
+//        }
+//        return slow;
+//    }
 
     //fast:a+b+c
     //slow:a+c

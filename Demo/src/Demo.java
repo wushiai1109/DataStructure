@@ -1,3 +1,6 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -9,7 +12,34 @@ import java.util.concurrent.*;
  */
 public class Demo {
 
+    private static final ThreadLocal<DateFormat> df = new ThreadLocal<DateFormat>() {
+        @Override
+        protected DateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd");
+        }
+    };
+
     public static void main(String[] args) {
+
+
+        Map<String,String> map1 = new HashMap<>();
+        for (int i = 0; i < 100; i++) {
+            map1.put("" + Math.round(Math.random()*10000), ""+Math.random()*10000+1);
+        }
+        map1.put("1","1");
+        map1.put("key",null);
+        map1.put(null,"value");
+        map1.put("2","2");
+        map1.put("3","3");
+        System.out.println(map1);
+
+
+        Date date = new Date();
+        DateFormat dateFormat = df.get();
+        System.out.println(dateFormat.format(date));
+
+
+        System.out.println((6-4)>>1);
 
 
         List<Integer> list = Collections.synchronizedList(new ArrayList<>());
@@ -25,6 +55,12 @@ public class Demo {
         list1.remove(1);
         System.out.println(list);
         System.out.println(list1);
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        CopyOnWriteArraySet<String> stringCopyOnWriteArraySet = new CopyOnWriteArraySet<>(set);
+        stringCopyOnWriteArraySet.add("hhh");
+        System.out.println(stringCopyOnWriteArraySet);
 
         //这个地方要注意两个地方：
         //迭代操作必须加锁，可以使用synchronized关键字修饰;
@@ -60,8 +96,6 @@ public class Demo {
 //                return list.listIterator();
 //            }
 //        }
-
-
 
 
 //        System.out.println(Math.ceil(12.5));

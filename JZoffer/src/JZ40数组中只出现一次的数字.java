@@ -10,6 +10,16 @@ import java.util.HashMap;
 //num1,num2分别为长度为1的数组。传出参数
 //将num1[0],num2[0]设置为返回结果
 public class JZ40数组中只出现一次的数字 {
+    public static void main(String[] args) {
+        int i = 0;
+        for (i = 0; i < 10; i++) {
+            if (i == 5) {
+                break;
+            }
+        }
+        System.out.println(i);
+    }
+
     public void FindNumsAppearOnce(int[] array, int num1[], int num2[]) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i : array) {

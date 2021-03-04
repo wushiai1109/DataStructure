@@ -1,12 +1,10 @@
-import static java.util.Objects.hash;
-
 /**
  * @ClassName RK算法
  * @Description
  * @Author Bruce
  * @Date 2020/11/12 8:27 下午
  */
-public class RK算法 {
+public class RK {
     //Time Complexity O(n)
     public int rabinKarp(String str, String pattern) {
         //主串长度
@@ -53,6 +51,6 @@ public class RK算法 {
     public static void main(String[] args) {
         String str = "aacdesadsdfer";
         String pattern = "adsd";
-        System.out.println(new RK算法().rabinKarp(str, pattern));
+        System.out.println(new RK().rabinKarp(str, pattern));
     }
 }

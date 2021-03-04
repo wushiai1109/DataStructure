@@ -51,8 +51,9 @@ public class 对链表进行插入排序147 {
             ListNode pre = dummyHead;
 
             //pre指向第一个比head.next大的节点
-            while (pre.next.val < head.next.val)
+            while (pre.next.val < head.next.val) {
                 pre = pre.next;
+            }
 
             ListNode cur = head.next;
             head.next = cur.next;

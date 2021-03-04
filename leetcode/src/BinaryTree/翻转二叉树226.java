@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+
 /**
  * @author Wushiai
  * @date 2020/4/4 9:13
@@ -41,8 +43,9 @@ public class 翻转二叉树226 {
 /// Time Complexity: O(n), where n is the node's number of the tree
 /// Space Complexity: O(h), where h is the height of the tree
     public TreeNode invertTree(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return null;
+        }
 
         TreeNode left = invertTree(root.left);
         TreeNode right = invertTree(root.right);
@@ -56,27 +59,30 @@ public class 翻转二叉树226 {
     /// Non-Recursive
 /// Time Complexity: O(n), where n is the node's number of the tree
 /// Space Complexity: O(h), where h is the height of the tree
-//    public TreeNode invertTree(TreeNode root) {
-//
-//        if(root == null)
-//            return null;
-//
-//        LinkedList<TreeNode> queue = new LinkedList<>();
-//        queue.addLast(root);
-//        while(!queue.isEmpty()){
-//            TreeNode curNode = queue.removeFirst();
-//
-//            TreeNode tempNode = curNode.left;
-//            curNode.left = curNode.right;
-//            curNode.right = tempNode;
-//
-//            if(curNode.left != null)
-//                queue.addLast(curNode.left);
-//            if(curNode.right != null)
-//                queue.push(curNode.right);
-//        }
-//
-//        return root;
-//    }
+    public TreeNode invertTree1(TreeNode root) {
+
+        if (root == null) {
+            return null;
+        }
+
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.addLast(root);
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.removeFirst();
+
+            TreeNode temp = cur.left;
+            cur.left = cur.right;
+            cur.right = temp;
+
+            if (cur.left != null) {
+                queue.addLast(cur.left);
+            }
+            if (cur.right != null) {
+                queue.push(cur.right);
+            }
+        }
+
+        return root;
+    }
 
 }

@@ -36,20 +36,20 @@ public class 奇偶链表328 {
         ListNode dummyHead2 = new ListNode(-1);
         ListNode node1 = dummyHead1;
         ListNode node2 = dummyHead2;
-        int x = 1;
+        boolean flag = true;
         while (head != null) {
-            if (x % 2 == 1) {
+            if (flag) {
                 node1.next = head;
                 head = head.next;
                 node1 = node1.next;
                 node1.next = null;
-                x++;
+                flag = false;
             } else {
                 node2.next = head;
                 head = head.next;
                 node2 = node2.next;
                 node2.next = null;
-                x++;
+                flag = true;
             }
         }
         node1.next = dummyHead2.next;

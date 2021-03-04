@@ -71,6 +71,7 @@ public class 前K个高频元素347 {
         int[] nums = {1, 1, 1, 2, 2, 3};
         int k = 2;
         printList((new 前K个高频元素347()).topKFrequent(nums, k));
+        System.out.println(Arrays.toString(nums));
     }
 
 

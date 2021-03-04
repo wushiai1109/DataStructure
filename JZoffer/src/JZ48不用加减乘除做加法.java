@@ -20,11 +20,11 @@
 public class JZ48不用加减乘除做加法 {
 
     public static void main(String[] args) {
-        System.out.println(new JZ48不用加减乘除做加法().Add(5,7));
+        System.out.println(new JZ48不用加减乘除做加法().Add(5, 7));
     }
 
-    //两个数异或：相当于每一位相加，而不考虑进位；
-    //两个数相与，并左移一位：相当于求得进位；
+    //两个数异或：相当于每一位相加，而不考虑进位；//a、b不同，异或为1。 a、b相同，异或为0
+    //两个数相与，并左移一位：相当于求得进位；//同1为1
     //将上述两步的结果相加
     public int Add(int num1, int num2) {
         while (num2 != 0) {

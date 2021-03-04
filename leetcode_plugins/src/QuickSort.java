@@ -14,6 +14,8 @@ public class QuickSort {
         System.out.println(Arrays.toString(nums));
     }
 
+    //Time Complexity:O(nlogn)
+    //Space Complexity：O(logn)
     public void quickSort(int[] array, int begin, int end) {
         if (end <= begin) {
             return;

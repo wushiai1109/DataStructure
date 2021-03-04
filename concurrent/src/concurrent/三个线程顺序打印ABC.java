@@ -1,5 +1,8 @@
 package concurrent;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @ClassName 三个线程顺序打印ABC
  * @Description
@@ -8,165 +11,143 @@ package concurrent;
  */
 public class 三个线程顺序打印ABC {
 
-//    设置三个boolean变量和一个锁。flag控制那个线程可以走，那个应该停下来。然后在打印后才i++。直到i<10的时候，线程停止。
+    // //通过JDK5中的锁来保证线程的访问的互斥
+    private static final Lock lock = new ReentrantLock();
 
-    private static Boolean flagA=true;
-    private static Boolean flagB=false;
-    private static Boolean flagC=false;
+    private static int state = 0;// 用state来判断轮到谁执行
 
-    public static void main(String[] args) {
+    private static final int RUN_NUMBER = 100;//表示循环的次数
 
-        final Object lock = new Object();
+    private static int number = 0;
 
-        Thread aThread=new Thread(new Runnable() {
+    //A线程
+    static class ThreadA extends Thread {
 
-            @Override
-            public void run() {
-                for(int i=0;i<10;) {
-
-                    synchronized (lock) {
-
-                        if (flagA) {
-                            //线程A执行
-                            System.out.println("A");
-                            flagA=false;
-                            flagB=true;
-                            flagC=false;
-                            lock.notifyAll();
-                            i++;
-                        }else {
-                            try {
-                                lock.wait();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
+        @Override
+        public void run() {
+            for (int i = 0; i < RUN_NUMBER; ) {
+                lock.lock();//获取锁定
+                try {
+                    if (state % 3 == 0) {
+                        System.out.println("第" + (i + 1) + "次:");
+                        System.out.println("A");
+                        state++;
+                        i++;
                     }
-
-                }
-
-
-            }
-        });
-
-
-        Thread bThread=new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                for(int i=0;i<10;) {
-
-                    synchronized (lock) {
-                        if (flagB) {
-                            //线程执行
-                            System.out.println("B");
-                            flagA=false;
-                            flagB=false;
-                            flagC=true;
-                            lock.notifyAll();
-                            i++;
-
-                        }else {
-
-                            try {
-                                lock.wait();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-
-                    }
-
-
-
-                }
-
-
-            }
-        });
-
-
-        Thread cThread=new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                for(int i=0;i<10;) {
-
-                    synchronized (lock) {
-
-                        if (flagC) {
-                            //线程执行
-                            System.out.println("C");
-                            flagA=true;
-                            flagB=false;
-                            flagC=false;
-                            lock.notifyAll();
-                            i++;
-
-                        }else {
-
-                            try {
-                                lock.wait();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-
-
-                    }
-
+                } finally {
+                    lock.unlock();//释放锁定。不释放锁定，会被该线程一直保持
                 }
 
             }
-        });
-
-        cThread.start();
-        bThread.start();
-        aThread.start();
+        }
     }
 
-//这个思路比较简单。三个线程。启动a,打印完A后；启动b，打印完B后；启动c。虽然能实现顺序打印，但是会之后还会重复创建线程。
+    //B线程
+    static class ThreadB extends Thread {
 
-    //    private Thread aThread, bThread, cThread;
-//    public void test1() {
+        @Override
+        public void run() {
+            for (int i = 0; i < RUN_NUMBER; ) {
+                lock.lock();
+                try {
+                    if (state % 3 == 1) {
+                        System.out.println("B");
+                        state++;
+                        i++;
+                    }
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+    }
+
+    //C线程
+    static class ThreadC extends Thread {
+
+        @Override
+        public void run() {
+            for (int i = 0; i < RUN_NUMBER; ) {
+                lock.lock();
+                try {
+                    if (state % 3 == 2) {
+                        System.out.println("C");
+                        state++;
+                        i++;
+                    }
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+    }
+
+//    //A线程
+//    static class ThreadA extends Thread {
 //
-//        aThread = new Thread(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                System.out.println("A");
+//        @Override
+//        public void run() {
+//            for (int i = 0; i < RUN_NUMBER; ) {
+//                lock.lock();//获取锁定
 //                try {
-//                    bThread.start();
-//                    bThread.join();
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
+//                    if (state % 3 == 0) {
+//                        System.out.println("第" + (i + 1) + "次:");
+//                        System.out.println("A");
+//                        state++;
+//                        i++;
+//                    }
+//                } finally {
+//                    lock.unlock();//释放锁定。不释放锁定，会被该线程一直保持
 //                }
-//            }
-//        });
-//        bThread = new Thread(new Runnable() {
 //
-//            @Override
-//            public void run() {
-//                System.out.println("B");
-//                try {
-//                    cThread.start();
-//                    cThread.join();
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
 //            }
-//        });
-//        cThread = new Thread(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                System.out.println("C");
-//            }
-//        });
-//
-//        aThread.start();
+//        }
 //    }
+//
+//    //B线程
+//    static class ThreadB extends Thread {
+//
+//        @Override
+//        public void run() {
+//            for (int i = 0; i < RUN_NUMBER; ) {
+//                lock.lock();
+//                try {
+//                    if (state % 3 == 1) {
+//                        System.out.println("B");
+//                        state++;
+//                        i++;
+//                    }
+//                } finally {
+//                    lock.unlock();
+//                }
+//            }
+//        }
+//    }
+//
+//    //C线程
+//    static class ThreadC extends Thread {
+//
+//        @Override
+//        public void run() {
+//            for (int i = 0; i < RUN_NUMBER; ) {
+//                lock.lock();
+//                try {
+//                    if (state % 3 == 2) {
+//                        System.out.println("C");
+//                        state++;
+//                        i++;
+//                    }
+//                } finally {
+//                    lock.unlock();
+//                }
+//            }
+//        }
+//    }
+
+    public static void main(String[] args) {
+        new ThreadA().start();
+        new ThreadB().start();
+        new ThreadC().start();
+    }
+
 }

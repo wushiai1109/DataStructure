@@ -35,11 +35,13 @@ public class JZ65矩阵中的路径 {
         //先根据i和j计算匹配的第一个元素转为一维数组的位置
         int index = i * cols + j;
         //递归终止条件
-        if (i < 0 || j < 0 || i >= rows || j >= cols || matrix[index] != str[k] || flag[index])
+        if (i < 0 || j < 0 || i >= rows || j >= cols || matrix[index] != str[k] || flag[index]) {
             return false;
+        }
         //若k已经到达str末尾了，说明之前的都已经匹配成功了，直接返回true即可
-        if (k == str.length - 1)
+        if (k == str.length - 1) {
             return true;
+        }
         //要走的第一个位置置为true，表示已经走过了
         flag[index] = true;
 

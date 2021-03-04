@@ -40,20 +40,23 @@ public class 路径总和III437 {
         }
     }
 
-    public static int pathSum(TreeNode root, int sum) {
-        if (root == null)
+    public int pathSum(TreeNode root, int sum) {
+        if (root == null) {
             return 0;
+        }
         return findPath(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
     }
 
-    private static int findPath(TreeNode node, int num) {
+    private int findPath(TreeNode node, int num) {
 
-        if (node == null)
+        if (node == null) {
             return 0;
+        }
 
         int res = 0;
-        if (node.val == num)
+        if (node.val == num) {
             res += 1;
+        }
 
         res += findPath(node.left, num - node.val);
         res += findPath(node.right, num - node.val);
@@ -97,6 +100,6 @@ public class 路径总和III437 {
         node9.left = node6;
         node9.right = node8;
 
-        System.out.println((new 路径总和III437()).pathSum(node9, 8));
+        System.out.println(new 路径总和III437().pathSum(node9, 8));
     }
 }

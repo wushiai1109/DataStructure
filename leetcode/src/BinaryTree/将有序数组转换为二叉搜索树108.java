@@ -37,8 +37,9 @@ public class 将有序数组转换为二叉搜索树108 {
     }
 
     private TreeNode buildTree(int[] nums, int l, int r) {
-        if (l > r)
+        if (l > r) {
             return null;
+        }
 
         int mid = l + (r - l) / 2;
         TreeNode root = new TreeNode(nums[mid]);

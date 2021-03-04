@@ -20,9 +20,9 @@ public class JZ38二叉树的深度 {
     }
 
     public int TreeDepth(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
-        return Math.max(TreeDepth(root.left)+1,TreeDepth(root.right)+1);
+        return Math.max(TreeDepth(root.left) + 1, TreeDepth(root.right) + 1);
     }
 }

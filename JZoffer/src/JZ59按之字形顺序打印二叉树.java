@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @ClassName JZ59按之字形顺序打印二叉树
@@ -21,55 +20,6 @@ public class JZ59按之字形顺序打印二叉树 {
         }
     }
 
-    public static ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
-
-        ArrayList<ArrayList<Integer>> lists = new ArrayList<>();
-        if (pRoot == null) {
-            return lists;
-        }
-
-        //s1存奇数层节点
-        Stack<TreeNode> s1 = new Stack<>();
-        s1.push(pRoot);
-        //s2存偶数层节点
-        Stack<TreeNode> s2 = new Stack<>();
-        int layer = 1;
-
-        while (!s1.empty() || !s2.empty()) {
-            if (layer % 2 != 0) {
-                ArrayList<Integer> list = new ArrayList<>();
-                while (!s1.empty()) {
-                    TreeNode node = s1.pop();
-                    if (node != null) {
-                        list.add(node.val);
-                        s2.push(node.left);
-                        s2.push(node.right);
-                    }
-                }
-                if (!list.isEmpty()) {
-                    lists.add(list);
-                    layer++;
-                }
-            } else {
-                ArrayList<Integer> list = new ArrayList<>();
-                while (!s2.empty()) {
-                    TreeNode node = s2.pop();
-                    if (node != null) {
-                        list.add(node.val);
-                        s1.push(node.right);
-                        s1.push(node.left);
-                    }
-                }
-                if (!list.isEmpty()) {
-                    lists.add(list);
-                    layer++;
-                }
-            }
-        }
-        return lists;
-    }
-
-
 //    public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 //
 //        ArrayList<ArrayList<Integer>> lists = new ArrayList<>();
@@ -77,34 +27,89 @@ public class JZ59按之字形顺序打印二叉树 {
 //            return lists;
 //        }
 //
-//        LinkedList<TreeNode> linkedList = new LinkedList<>();
-//        linkedList.add(pRoot);
+//        //s1存奇数层节点
+//        Stack<TreeNode> s1 = new Stack<>();
+//        s1.push(pRoot);
+//        //s2存偶数层节点
+//        Stack<TreeNode> s2 = new Stack<>();
+//        int layer = 1;
 //
-//        int flag = 0;
-//
-//        while (!linkedList.isEmpty()) {
-//            ArrayList<Integer> list = new ArrayList<>();
-//            int count = linkedList.size();
-//            for (int i = 0; i < count; i++) {
-//                TreeNode node = linkedList.poll();
-//                list.add(node.val);
-//                if (node.left != null) {
-//                    linkedList.offer(node.left);
+//        while (!s1.empty() || !s2.empty()) {
+//            if (layer % 2 != 0) {
+//                ArrayList<Integer> list = new ArrayList<>();
+//                while (!s1.empty()) {
+//                    TreeNode node = s1.pop();
+//                    if (node != null) {
+//                        list.add(node.val);
+//                        s2.push(node.left);
+//                        s2.push(node.right);
+//                    }
 //                }
-//                if (node.right != null) {
-//                    linkedList.offer(node.right);
+//                if (!list.isEmpty()) {
+//                    lists.add(list);
+//                    layer++;
+//                }
+//            } else {
+//                ArrayList<Integer> list = new ArrayList<>();
+//                while (!s2.empty()) {
+//                    TreeNode node = s2.pop();
+//                    if (node != null) {
+//                        list.add(node.val);
+//                        s1.push(node.right);
+//                        s1.push(node.left);
+//                    }
+//                }
+//                if (!list.isEmpty()) {
+//                    lists.add(list);
+//                    layer++;
 //                }
 //            }
-//            if (flag % 2 == 1) {
-//                for (int i = 1; i < list.size(); i++) {
-//                    list.add(0,list.remove(i));
-//                }
-//            }
-//            lists.add(list);
-//            flag++;
 //        }
 //        return lists;
 //    }
+
+
+    public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
+
+        ArrayList<ArrayList<Integer>> lists = new ArrayList<>();
+        if (pRoot == null) {
+            return lists;
+        }
+
+        LinkedList<TreeNode> linkedList = new LinkedList<>();
+        linkedList.add(pRoot);
+
+        int flag = 0;
+
+        while (!linkedList.isEmpty()) {
+            ArrayList<Integer> list = new ArrayList<>();
+            int count = linkedList.size();
+            for (int i = 0; i < count; i++) {
+                TreeNode node = linkedList.poll();
+                list.add(node.val);
+                if (node.left != null) {
+                    linkedList.offer(node.left);
+                }
+                if (node.right != null) {
+                    linkedList.offer(node.right);
+                }
+            }
+            if (flag % 2 == 1) {
+                Collections.sort(list, new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return o2-o1;
+                    }
+                });
+//                for (int i = 1; i < list.size(); i++) {
+//                    list.add(0, list.remove(i));
+//                }
+            }
+            lists.add(list);
+            flag++;
+        }
+        return lists;
+    }
 
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(8);

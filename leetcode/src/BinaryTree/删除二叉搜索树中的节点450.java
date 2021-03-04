@@ -55,8 +55,9 @@ public class 删除二叉搜索树中的节点450 {
 /// Time Complexity: O(logn)
 /// Space Complexity: O(h)
     public TreeNode deleteNode(TreeNode root, int key) {
-        if (root == null)
+        if (root == null) {
             return null;
+        }
         if (key < root.val) {
             // 待删除节点在左子树中
             root.left = deleteNode(root.left, key);
@@ -84,17 +85,39 @@ public class 删除二叉搜索树中的节点450 {
     }
 
     private TreeNode min(TreeNode node) {
-        if (node.left == null)
-            return node;
+//        while (node.left != null) {
+//            node = node.left;
+//        }
+//        return node;
 
+        if (node.left == null) {
+            return node;
+        }
         return min(node.left);
     }
 
     private TreeNode deleteMin(TreeNode node) {
-        if (node.left == null)
+        if (node.left == null) {
             return node.right;
+        }
 
         node.left = deleteMin(node.left);
+        return node;
+    }
+
+    private TreeNode deleteMin1(TreeNode node) {
+        if (node.left == null) {
+            return node.right;
+        }
+
+        TreeNode preNode = node;
+        TreeNode curNode = node;
+        while (curNode.left != null) {
+            preNode = curNode;
+            curNode = curNode.left;
+        }
+
+        preNode.left = curNode.right;
         return node;
     }
 }

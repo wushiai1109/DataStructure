@@ -24,16 +24,18 @@ public class 删除排序链表中的重复元素83 {
         }
     }
 
-//    public leetcode.ListNode deleteDuplicates(leetcode.ListNode head) {
-//        // 递归终止条件
-//        if (head == null || head.next == null)
-//            return head;
-//
-//        head.next = deleteDuplicates(head.next);
-//        if (head.val == head.next.val)
-//            head = head.next;
-//        return head;
-//    }
+    public ListNode deleteDuplicates1(ListNode head) {
+        // 递归终止条件
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        head.next = deleteDuplicates1(head.next);
+        if (head.val == head.next.val) {
+            head = head.next;
+        }
+        return head;
+    }
 
     //迭代
     public ListNode deleteDuplicates(ListNode head) {

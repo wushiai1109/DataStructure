@@ -37,8 +37,9 @@ public class 删除排序链表中的重复元素II82 {
                     delNode = delNode.next;
                 }
                 cur.next = delNode.next;
-            } else
+            } else {
                 cur = cur.next;
+            }
         }
 
         return dummyHead.next;

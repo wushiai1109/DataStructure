@@ -43,10 +43,12 @@ public class 两数相加2 {
             node.next = new ListNode(sumVal % 10);
             node = node.next;
 
-            if (l1 != null)
+            if (l1 != null) {
                 l1 = l1.next;
-            if (l2 != null)
+            }
+            if (l2 != null) {
                 l2 = l2.next;
+            }
         }
         return dummyHead.next;
     }

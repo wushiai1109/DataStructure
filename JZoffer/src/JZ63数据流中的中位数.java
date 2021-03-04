@@ -46,14 +46,16 @@ public class JZ63数据流中的中位数 {
     }
 
     public Double GetMedian() {
-        if (count == 0)
+        if (count == 0) {
             throw new RuntimeException("no available number!");
+        }
         double result;
         //总数为奇数时，大顶堆堆顶就是中位数
-        if ((count & 1) == 1)
+        if ((count & 1) == 1) {
             result = maxHeap.peek();
-        else
-            result = (minHeap.peek() + maxHeap.peek()) / 2.0;
+        } else {
+            result = ((minHeap.peek() + maxHeap.peek())) / 2.0;
+        }
         return result;
     }
 }

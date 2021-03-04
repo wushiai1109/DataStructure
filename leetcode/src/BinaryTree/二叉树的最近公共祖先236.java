@@ -42,18 +42,20 @@ public class 二叉树的最近公共祖先236 {
 /// Time Complexity: O(n)
 /// Space Complexity: O(n)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || q == root)
+        if (root == null || root == p || root == q) {
             return root;
+        }
 
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
         //如果左右都存在，就说明pq都出现了，这就是公共祖先，此时不用考虑公共祖先是自己的情况，因为上面已经做过判断了。
-        if (left != null && right != null)
+        if (left != null && right != null) {
             return root;
-        else if (left != null)
+        } else if (left != null) {
             return left;
-        else
+        } else {
             return right;
+        }
     }
 
 }

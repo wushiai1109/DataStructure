@@ -43,9 +43,9 @@ public class 路径总和II113 {
 /// Space Complexity: O(n)
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res = new ArrayList<>();
-
-        if (root == null)
+        if (root == null) {
             return res;
+        }
 
         if (root.val == sum && root.left == null && root.right == null) {
             List<Integer> list = new ArrayList<>();

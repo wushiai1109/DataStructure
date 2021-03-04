@@ -45,6 +45,7 @@ public class JZ27字符串的排列 {
 
     private void PermutationHelper(char[] chars, int i, ArrayList<String> list) {
         if (i == chars.length - 1) {
+            System.out.println(Arrays.toString(chars));
             list.add(String.valueOf(chars));
         } else {
             Set<Character> charSet = new HashSet<>();

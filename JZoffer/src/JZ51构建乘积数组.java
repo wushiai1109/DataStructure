@@ -22,7 +22,7 @@ public class JZ51构建乘积数组 {
         // 计算后N - i个元素的乘积并连接
         for (int i = len - 1; i >= 1; i--) {
             temp *= A[i];
-            B[i-1] *= temp;
+            B[i - 1] *= temp;
         }
         return B;
     }

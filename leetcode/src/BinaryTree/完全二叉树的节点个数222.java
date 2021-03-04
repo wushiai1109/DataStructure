@@ -31,46 +31,44 @@ public class 完全二叉树的节点个数222 {
         }
     }
 
-//    //O(n)
-//    public int countNodes(TreeNode root) {
-//        return root == null ? 0 : countNodes(root.left) + countNodes(root.right) + 1;
-//    }
+    //O(n)
+    public int countNodes1(TreeNode root) {
+        return root == null ? 0 : countNodesSum(root.left) + countNodesSum(root.right) + 1;
+    }
 
-//    public int countNodes(TreeNode root) {
-//        /**
-//         完全二叉树的高度可以直接通过不断地访问左子树就可以获取
-//         判断左右子树的高度:
-//         如果相等说明左子树是满二叉树, 然后进一步判断右子树的节点数(最后一层最后出现的节点必然在右子树中)
-//         如果不等说明右子树是深度小于左子树的满二叉树, 然后进一步判断左子树的节点数(最后一层最后出现的节点必然在左子树中)
-//         **/
-//        if (root == null)
-//            return 0;
-//        int ld = getDepth(root.left);
-//        int rd = getDepth(root.right);
-//        if (ld == rd)
-//            return (1 << ld) + countNodes(root.right); // 1(根节点) + (1 << ld)-1(左完全左子树节点数) + 右子树节点数量
-//        else
-//            return (1 << rd) + countNodes(root.left);  // 1(根节点) + (1 << rd)-1(右完全右子树节点数) + 左子树节点数量
-//    }
-//
-//    private int getDepth(TreeNode root) {
-//        int depth = 0;
-//        while (root != null) {
-//            depth++;
-//            root = root.left;
-//        }
-//        return depth;
-//    }
+    public int countNodesSum(TreeNode root) {
+        /**
+         完全二叉树的高度可以直接通过不断地访问左子树就可以获取
+         判断左右子树的高度:
+         如果相等说明左子树是满二叉树, 然后进一步判断右子树的节点数(最后一层最后出现的节点必然在右子树中)
+         如果不等说明右子树是深度小于左子树的满二叉树, 然后进一步判断左子树的节点数(最后一层最后出现的节点必然在左子树中)
+         **/
+        if (root == null) {
+            return 0;
+        }
+        int ld = getDepth1(root.left);
+        int rd = getDepth1(root.right);
+        if (ld == rd) {
+            return (1 << ld) + countNodesSum(root.right); // 1(根节点) + (1 << ld)-1(左完全左子树节点数) + 右子树节点数量
+        } else {
+            return (1 << rd) + countNodesSum(root.left);  // 1(根节点) + (1 << rd)-1(右完全右子树节点数) + 左子树节点数量
+        }
+    }
 
-    public static void main(String[] args) {
 
+    private int getDepth1(TreeNode root) {
+        int depth = 0;
+        while (root != null) {
+            depth++;
+            root = root.left;
+        }
+        return depth;
     }
 
 
     /// Recursion
 /// A very small improvement based on solution1
 /// No repeat calculation for leftLeft:)
-///
 /// Time Complexity: O(h^2) where h is the height of the tree
 /// Space Complexity: O(h)
     public int countNodes(TreeNode root) {
@@ -78,26 +76,24 @@ public class 完全二叉树的节点个数222 {
     }
 
     private int countNodes(TreeNode root, int l) {
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
 
-        int left = l == -1 ? leftHeight(root.left) : l;
-        int right = leftHeight(root.right);
-        if (left == right)
+        int left = l == -1 ? getDepth(root.left) : l;
+        int right = getDepth(root.right);
+        if (left == right) {
             return 1 + ((1 << left) - 1) + countNodes(root.right, -1);
-        else
+        } else {
             return 1 + ((1 << right) - 1) + countNodes(root.left, left - 1);
+        }
     }
 
-    private int leftHeight(TreeNode root) {
-        if (root == null)
+    private int getDepth(TreeNode root) {
+        if (root == null) {
             return 0;
-        return 1 + leftHeight(root.left);
+        }
+        return 1 + getDepth(root.left);
     }
 
-    private int rightHeight(TreeNode root) {
-        if (root == null)
-            return 0;
-        return 1 + rightHeight(root.right);
-    }
 }

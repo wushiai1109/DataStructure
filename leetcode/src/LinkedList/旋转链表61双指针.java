@@ -34,8 +34,9 @@ public class 旋转链表61双指针 {
     }
 
     public ListNode rotateRight(ListNode head, int k) {
-        if (k == 0 || head == null || head.next == null)
+        if (k == 0 || head == null || head.next == null) {
             return head;
+        }
 
         ListNode dummyHead = new ListNode(-1);
         dummyHead.next = head;
@@ -44,16 +45,17 @@ public class 旋转链表61双指针 {
         ListNode q = dummyHead;
 
         int length = 0;
-        ListNode y = dummyHead;
+        ListNode len = dummyHead;
 
         //链表的长度length
-        while (y.next != null) {
+        while (len.next != null) {
             length++;
-            y = y.next;
+            len = len.next;
         }
 
-        if (length == k || k % length == 0)
+        if (length == k || k % length == 0) {
             return dummyHead.next;
+        }
 
         //p为翻转起始点的前一个点
         for (int i = 0; i < (k % length); i++) {

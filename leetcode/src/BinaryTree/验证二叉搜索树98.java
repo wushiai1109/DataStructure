@@ -49,19 +49,24 @@ public class 验证二叉搜索树98 {
         return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
+
     private boolean isValidBST(TreeNode node, int min, int max) {
 
-        if (node == null)
+        if (node == null) {
             return true;
+        }
 
-        if (node.val < min || node.val > max)
+        if (node.val < min || node.val > max) {
             return false;
+        }
 
-        if (node.left != null && node.left.val >= node.val)
+        if (node.left != null && node.left.val >= node.val) {
             return false;
+        }
 
-        if (node.right != null && node.right.val <= node.val)
+        if (node.right != null && node.right.val <= node.val) {
             return false;
+        }
 
         return isValidBST(node.left, min, node.val - 1)
                 && isValidBST(node.right, node.val + 1, max);
@@ -69,6 +74,7 @@ public class 验证二叉搜索树98 {
 
     public static void main(String[] args) {
 
+        System.out.println(Integer.MIN_VALUE);
         TreeNode root = new TreeNode(-2147483648);
         root.left = new TreeNode(-2147483648);
 
