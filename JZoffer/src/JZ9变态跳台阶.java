@@ -18,7 +18,7 @@ public class JZ9变态跳台阶 {
     //所以f(n)=f(n-1)+f(n-2)+...+f(1)
     //因为f(n-1)=f(n-2)+f(n-3)+...+f(1)
     //所以f(n)=2*f(n-1)
-    public int JumpFloorII(int target) {
+    public int jumpFloorII(int target) {
 //        if (target == 1) {
 //            return target;
 //        }
@@ -36,7 +36,7 @@ public class JZ9变态跳台阶 {
         int[] dp = new int[target + 1];
         dp[1] = 1;
         for (int i = 2; i <= target; i++) {
-            dp[i] = 2*dp[i-1];
+            dp[i] = 2 * dp[i - 1];
         }
         return dp[target];
     }

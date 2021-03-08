@@ -17,12 +17,11 @@
  * @Date 2021/2/12 下午11:09
  */
 public class JZ8跳台阶 {
-    public int JumpFloor(int target) {
-        if(target == 1 || target == 2){
+    public int jumpFloor(int target) {
+        if (target == 1 || target == 2) {
             return target;
         }
         int[] dp = new int[target + 1];
-        dp[0] = 0;
         dp[1] = 1;
         dp[2] = 2;
         for (int i = 3; i <= target; i++) {

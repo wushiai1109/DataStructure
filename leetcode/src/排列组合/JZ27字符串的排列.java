@@ -1,4 +1,8 @@
-import java.util.*;
+package 排列组合;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ClassName JZ27字符串的排列

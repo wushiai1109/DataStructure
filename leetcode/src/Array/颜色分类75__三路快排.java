@@ -25,8 +25,9 @@ public class 颜色分类75__三路快排 {
     }
 
     public static void printArr(int[] nums) {
-        for (int num : nums)
+        for (int num : nums) {
             System.out.print(num + " ");
+        }
         System.out.println();
     }
 

@@ -24,31 +24,34 @@ public class 移动零283 {
     }
 
     private static void printArr(int[] arr) {
-        for (int i = 0; i < arr.length; i++)
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
         System.out.println();
     }
 
-    //方法1
-    //时间复杂度：O(n)
-    //时间复杂度：O(n)
-    public void moveZeroes(int[] nums) {
-
-        ArrayList<Integer> nonZeroElements = new ArrayList<>();
-
-        // 将所有不是0的元素移到新的数组
-        for (int i = 0; i < nums.length; i++)
-            if (nums[i] != 0)
-                nonZeroElements.add(nums[i]);
-
-        // 将所有不是0的元素移到原数组中
-        for (int i = 0; i < nonZeroElements.size(); i++)
-            nums[i] = nonZeroElements.get(i);
-
-        // 将原素组中超过nonZeroElements数组的长度的元素设为0
-        for (int i = nonZeroElements.size(); i < nums.length; i++)
-            nums[i] = 0;
-    }
+//    //方法1
+//    //时间复杂度：O(n)
+//    //时间复杂度：O(n)
+//    public void moveZeroes(int[] nums) {
+//
+//        ArrayList<Integer> nonZeroElements = new ArrayList<>();
+//
+//        // 将所有不是0的元素移到新的数组
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] != 0) {
+//                nonZeroElements.add(nums[i]);
+//            }
+//        }
+//
+//        // 将所有不是0的元素移到原数组中
+//        for (int i = 0; i < nonZeroElements.size(); i++)
+//            nums[i] = nonZeroElements.get(i);
+//
+//        // 将原素组中超过nonZeroElements数组的长度的元素设为0
+//        for (int i = nonZeroElements.size(); i < nums.length; i++)
+//            nums[i] = 0;
+//    }
 
 //    //方法2
 //    //时间复杂度：O(n)
@@ -66,22 +69,24 @@ public class 移动零283 {
 //    }
 
 
-//    //方法3
-//    //时间复杂度：O(n)
-//    //时间复杂度：O(1)
-//    public void moveZeroes(int[] nums) {
-//
-//        int k = 0;
-//        for (int i = 0; i < nums.length; i++)
-//            if (nums[i] != 0)
-//                swap(nums, k++, i);
-//    }
-//
-//    private void swap(int[] nums, int i, int j) {
-//        int t = nums[i];
-//        nums[i] = nums[j];
-//        nums[j] = t;
-//    }
+    //方法3
+    //时间复杂度：O(n)
+    //时间复杂度：O(1)
+    public void moveZeroes(int[] nums) {
+
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                swap(nums, k++, i);
+            }
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
+    }
 
 //    //方法4
 //    //时间复杂度：O(n)

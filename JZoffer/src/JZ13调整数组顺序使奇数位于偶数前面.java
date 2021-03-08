@@ -19,7 +19,23 @@ public class JZ13调整数组顺序使奇数位于偶数前面 {
         System.out.println(Math.pow(2,3));
     }
 
-    public void reOrderArray(int[] array) {
+    public int[] reOrderArray(int[] array) {
+        int index = 0;
+        //i用于遍历数组使用，index用于定位
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 1) {
+                int temp = array[i];
+                if (i - index >= 0) {
+                    System.arraycopy(array, index, array, index + 1, i - index);
+                }
+                array[index] = temp;
+                index++;
+            }
+        }
+        return array;
+    }
+
+    public void reOrderArray2(int[] array) {
         int length = array.length;
         int index = 0;
         //i用于遍历数组使用，index用于定位

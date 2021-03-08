@@ -1,6 +1,8 @@
 package PriorityQueue;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -41,7 +43,6 @@ public class 合并K个排序链表23 {
         }
 
         ListNode dummyHead = new ListNode(-1);
-
         ListNode cur = dummyHead;
 
         PriorityQueue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
@@ -67,6 +68,31 @@ public class 合并K个排序链表23 {
             }
         }
         return dummyHead.next;
+    }
+
+
+    //子集
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        System.out.println(new 合并K个排序链表23().collection(nums));
+    }
+
+    public List<List<Integer>> collection(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        backCollection(nums, res, 0, new ArrayList<Integer>());
+        return res;
+    }
+
+    private void backCollection(int[] nums, List<List<Integer>> res, int i, ArrayList<Integer> list) {
+        res.add(new ArrayList<>(list));
+        for (int j = i; j < nums.length; j++) {
+            list.add(nums[j]);
+            backCollection(nums, res, j + 1, list);
+            list.remove(list.size() - 1);
+        }
     }
 
 }

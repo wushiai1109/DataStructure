@@ -30,13 +30,14 @@ public class 删除排序数组中的重复项26 {
     // Space Complexity: O(1)
     public static int removeDuplicates(int[] nums) {
 
-        if (nums.length == 0 || nums.length == 1)
+        if (nums.length == 0 || nums.length == 1) {
             return nums.length;
+        }
         int i = 0, j = 0;
         while (i < nums.length) {
-            if (nums[j] == nums[i])
+            if (nums[j] == nums[i]) {
                 i++;
-            else {
+            } else {
                 j++;
                 nums[j] = nums[i];
                 i++;

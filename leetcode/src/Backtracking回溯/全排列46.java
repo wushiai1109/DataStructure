@@ -30,38 +30,32 @@ public class 全排列46 {
     /// Recursive get all the permutations in place
 /// Time Complexity: O(n!)
 /// Space Complexity: O(n)
-    private ArrayList<List<Integer>> res;
-
     public List<List<Integer>> permute(int[] nums) {
-
-        res = new ArrayList<List<Integer>>();
-        if(nums == null || nums.length == 0)
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
             return res;
-
-        generatePermutation(nums, 0);
-
+        }
+        generatePermutation(res, nums, 0);
         return res;
     }
 
-    private void generatePermutation(int[] nums, int index){
-
-        if(index == nums.length){
-            List<Integer> list = new ArrayList<Integer>();
-            for(int i : nums)
+    private void generatePermutation(List<List<Integer>> res, int[] nums, int index) {
+        if (index == nums.length) {
+            List<Integer> list = new ArrayList<>();
+            for (int i : nums) {
                 list.add(i);
+            }
             res.add(list);
             return;
         }
-
-        for(int i = index ; i < nums.length ; i ++){
+        for (int i = index; i < nums.length; i++) {
             swap(nums, i, index);
-            generatePermutation(nums, index + 1);
+            generatePermutation(res, nums, index + 1);
             swap(nums, i, index);
         }
-        return;
     }
 
-    private void swap(int[] nums, int i, int j){
+    private void swap(int[] nums, int i, int j) {
         int t = nums[i];
         nums[i] = nums[j];
         nums[j] = t;
@@ -110,7 +104,8 @@ public class 全排列46 {
 
         int[] nums = {1, 2, 3};
         List<List<Integer>> res = (new 全排列46()).permute(nums);
-        for (List<Integer> list : res)
+        for (List<Integer> list : res) {
             System.out.println(list);
+        }
     }
 }

@@ -23,20 +23,33 @@ import java.util.List;
  */
 public class 三角形最小路径和120 {
 
-    public int minimumTotal(List<List<Integer>> triangle) {
-        if (triangle == null || triangle.size() == 0){
+    public int minimumTotal1(List<List<Integer>> triangle) {
+        if (triangle == null || triangle.size() == 0) {
             return 0;
         }
         // 加1可以不用初始化最后一层
-        int[][] dp = new int[triangle.size()+1][triangle.size()+1];
+        int[][] dp = new int[triangle.size() + 1][triangle.size() + 1];
 
-        for (int i = triangle.size()-1; i>=0; i--){
+        for (int i = triangle.size() - 1; i >= 0; i--) {
             List<Integer> curList = triangle.get(i);
-            for(int j = 0 ; j< curList.size(); j++){
-                dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1]) + curList.get(j);
+            for (int j = 0; j < curList.size(); j++) {
+                dp[i][j] = Math.min(dp[i + 1][j], dp[i + 1][j + 1]) + curList.get(j);
             }
         }
         return dp[0][0];
+    }
+
+    //Time ComplexityO(n^2)
+    //Space ComplexityO(n)
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int len = triangle.size();
+        int[] dp = new int[len + 1];
+        for (int i = len - 1; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                dp[j] = Math.min(dp[j], dp[j + 1]) + triangle.get(i).get(j);
+            }
+        }
+        return dp[0];
     }
 
 }

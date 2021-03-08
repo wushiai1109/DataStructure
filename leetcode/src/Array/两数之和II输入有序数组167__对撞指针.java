@@ -84,13 +84,15 @@ public class 两数之和II输入有序数组167__对撞指针 {
     // Time Complexity: O(n)
     // Space Complexity: O(1)
     public int[] twoSum(int[] numbers, int target) {
-        if (numbers.length < 2)
+        if (numbers.length < 2) {
             throw new IllegalArgumentException("Illegal argument numbers");
+        }
         int l = 0, r = numbers.length - 1;
         while (l < r) {
             if (numbers[l] + numbers[r] == target) {
-                int[] res = {l + 1, r + 1};
-                return res;
+//                int[] res = {l + 1, r + 1};
+//                return res;
+                return new int[]{l + 1, r + 1};
             } else if (numbers[l] + numbers[r] < target) {
                 l++;
             } else {// numbers[l] + numbers[r] > target

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ClassName 二叉树中和为某一值的路径
@@ -36,28 +37,59 @@ public class JZ24二叉树中和为某一值的路径 {
         }
     }
 
+//    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+//        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+//        if (root == null) {
+//            return res;
+//        }
+//        dfs(root, target, res, new ArrayList<Integer>());
+//        return res;
+//    }
+//
+//    public void dfs(TreeNode root, int target, ArrayList<ArrayList<Integer>> res, ArrayList<Integer> list) {
+//        if (root == null) {
+//            return;
+//        }
+//        list.add(root.val);
+//        target -= root.val;
+//        if (target == 0 && root.left == null && root.right == null) {
+//            res.add(new ArrayList<>(list));
+//        } else {
+//            dfs(root.left, target, res, list);
+//            dfs(root.right, target, res, list);
+//        }
+//        list.remove(list.size() - 1);
+//    }
+
+    /// Recursion
+/// Time Complexity: O(n)
+/// Space Complexity: O(n)
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
-        dfs(root, target, res, new ArrayList<Integer>());
-        return res;
-    }
 
-    public void dfs(TreeNode root, int target, ArrayList<ArrayList<Integer>> res, ArrayList<Integer> list) {
-        if (root == null) {
-            return;
+        if (root.val == target && root.left == null && root.right == null) {
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(root.val);
+            res.add(list);
+            return res;
         }
-        list.add(root.val);
-        target -= root.val;
-        if (target == 0 && root.left == null && root.right == null) {
-            res.add(new ArrayList<>(list));
-        } else {
-            dfs(root.left, target, res, list);
-            dfs(root.right, target, res, list);
+
+        ArrayList<ArrayList<Integer>> left = FindPath(root.left, target - root.val);
+        for (ArrayList<Integer> list : left) {
+            list.add(0, root.val);
+            res.add(list);
         }
-        list.remove(list.size() - 1);
+
+        ArrayList<ArrayList<Integer>> right = FindPath(root.right, target - root.val);
+        for (ArrayList<Integer> list : right) {
+            list.add(0, root.val);
+            res.add(list);
+        }
+
+        return res;
     }
 
 }

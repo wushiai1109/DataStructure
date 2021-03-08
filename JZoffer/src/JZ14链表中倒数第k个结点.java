@@ -21,19 +21,17 @@ public class JZ14链表中倒数第k个结点 {
         }
     }
 
-    public ListNode FindKthToTail(ListNode head, int k) {
+    public ListNode FindKthToTail(ListNode pHead, int k) {
         ListNode dummyHead = new ListNode(-1);
-        dummyHead.next = head;
-
+        dummyHead.next = pHead;
         ListNode start = dummyHead;
         ListNode end = dummyHead;
-
-        int n = k+1;
+        int index = k + 1;
         //start和end相差n+1个
         for (int i = 0; i < k + 1; i++) {
-            if(end != null){
+            if (end != null) {
                 end = end.next;
-                n--;
+                index--;
             }
         }
 
@@ -43,7 +41,7 @@ public class JZ14链表中倒数第k个结点 {
             end = end.next;
         }
 
-        return n == 0 ? start.next : null;
+        return index == 0 ? start.next : null;
     }
 
 }

@@ -23,15 +23,21 @@ package Array;
  * @Author Bruce
  * @Date 2020/6/6 6:57 下午
  */
-public class 缺失的数字53 {
+public class JZ缺失的数字53 {
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 2, 3, 4, 5, 6, 7, 9};
+        System.out.println(new JZ缺失的数字53().missingNumber(nums));
+    }
+
     public int missingNumber(int[] nums) {
         int i = 0, j = nums.length - 1;
         while (i <= j) {
-            int m = (i + j) / 2;
-            if (nums[m] == m)
+            int m = i + (j - i) / 2;
+            if (nums[m] == m) {
                 i = m + 1;
-            else
+            } else {
                 j = m - 1;
+            }
         }
         return i;
     }

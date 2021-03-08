@@ -46,23 +46,25 @@ public class 前K个高频元素347 {
         );
 
         for (int key : map.keySet()) {
-            if (pq.size() < k)
+            if (pq.size() < k) {
                 pq.add(key);
-            else if (map.get(key) > map.get(pq.peek())) {
+            } else if (map.get(key) > map.get(pq.peek())) {
                 pq.remove();
                 pq.add(key);
             }
         }
 
         ArrayList<Integer> res = new ArrayList<>();
-        while (!pq.isEmpty())
+        while (!pq.isEmpty()) {
             res.add(pq.remove());
+        }
         return res;
     }
 
     private static void printList(List<Integer> nums) {
-        for (Integer num : nums)
+        for (Integer num : nums) {
             System.out.print(num + " ");
+        }
         System.out.println();
     }
 

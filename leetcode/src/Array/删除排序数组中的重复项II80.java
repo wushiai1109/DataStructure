@@ -32,8 +32,9 @@ public class 删除排序数组中的重复项II80 {
     // Space Complexity: O(1)
     public int removeDuplicates(int[] nums) {
 
-        if (nums.length == 0 || nums.length == 1 || nums.length == 2)
+        if (nums.length == 0 || nums.length == 1 || nums.length == 2) {
             return nums.length;
+        }
         int i = 0, j = 0, index = 0;
         while (i < nums.length) {
             if (nums[j] == nums[i]) {
@@ -42,8 +43,9 @@ public class 删除排序数组中的重复项II80 {
                     j++;
                     nums[j] = nums[i];
                     i++;
-                } else
+                } else {
                     i++;
+                }
             } else {
                 index = 1;
                 j++;

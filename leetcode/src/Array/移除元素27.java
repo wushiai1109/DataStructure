@@ -45,11 +45,13 @@ class 移除元素27 {
     public static int removeElement(int[] nums, int val) {
         int sum = nums.length;
         int i = 0;
-        while (i < sum)
-            if (nums[i] == val)
+        while (i < sum) {
+            if (nums[i] == val) {
                 nums[i] = nums[--sum];
-            else
+            } else {
                 i++;
+            }
+        }
         return sum;
     }
 }

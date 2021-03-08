@@ -28,7 +28,6 @@ public class JZ42和为S的两个数字 {
             return list;
         }
         int i = 0, j = array.length - 1;
-
         while (i < j) {
             if (array[i] + array[j] == sum) {
                 list.add(array[i]);

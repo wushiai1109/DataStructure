@@ -39,8 +39,9 @@ import java.util.Arrays;
 public class 拼写单词1160 {
     public int countCharacters(String[] words, String chars) {
         int[] hash = new int[26];
-        for(char ch : chars.toCharArray())
+        for(char ch : chars.toCharArray()) {
             hash[ch - 'a'] += 1;
+        }
         int[] map = new int[26];
         int len = 0;
         for(String word : words){
@@ -48,8 +49,9 @@ public class 拼写单词1160 {
             boolean flag = true;
             for(char ch : word.toCharArray()){
                 map[ch - 'a']++;
-                if(map[ch - 'a'] > hash[ch - 'a'])
+                if(map[ch - 'a'] > hash[ch - 'a']) {
                     flag = false;
+                }
             }
             len += flag ? word.length() : 0;
         }

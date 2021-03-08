@@ -38,18 +38,18 @@ public class JZ17树的子结构 {
     }
 
     //判断是否是子结构
-    public boolean judge(TreeNode root, TreeNode node) {
+    public boolean judge(TreeNode root1, TreeNode root2) {
         //子结构已经循环完毕，代表全部匹配
-        if (node == null) {
+        if (root2 == null) {
             return true;
         }
         //大树已经循环完毕，并未成功匹配
-        if (root == null) {
+        if (root1 == null) {
             return false;
         }
         //相等后判断左右孩子
-        if (root.val == node.val) {
-            return judge(root.left, node.left) && judge(root.right, node.right);
+        if (root1.val == root2.val) {
+            return judge(root1.left, root2.left) && judge(root1.right, root2.right);
         }
         return false;
     }

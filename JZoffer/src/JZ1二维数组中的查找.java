@@ -15,7 +15,6 @@
  * @Date 2021/1/24 下午2:12
  */
 public class JZ1二维数组中的查找 {
-
     public boolean Find(int target, int[][] array) {
         if (array == null || array[0].length == 0) {
             return false;
@@ -33,5 +32,4 @@ public class JZ1二维数组中的查找 {
         }
         return flag;
     }
-
 }

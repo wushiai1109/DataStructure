@@ -36,16 +36,19 @@ public class 反转字符串中的元音字母345 {
                     chars[i] == 'A' || chars[i] == 'E' || chars[i] == 'I' || chars[i] == 'O' || chars[i] == 'U');
             Boolean flag2 = (chars[j] == 'a' || chars[j] == 'e' || chars[j] == 'i' || chars[j] == 'o' || chars[j] == 'u' ||
                     chars[j] == 'A' || chars[j] == 'E' || chars[j] == 'I' || chars[j] == 'O' || chars[j] == 'U');
+//            boolean flag = "a".equalsIgnoreCase(String.valueOf(chars[i])) || "e".equalsIgnoreCase(String.valueOf(chars[i])) || "i".equalsIgnoreCase(String.valueOf(chars[i]))
+//                    || "o".equalsIgnoreCase(String.valueOf(chars[i])) || "u".equalsIgnoreCase(String.valueOf(chars[i]));
             if (flag1 && flag2) {
                 temp = chars[i];
                 chars[i] = chars[j];
                 chars[j] = temp;
                 i++;
                 j--;
-            } else if (!flag1)
+            } else if (!flag1) {
                 i++;
-            else
+            } else {
                 j--;
+            }
         }
         return String.valueOf(chars);
     }

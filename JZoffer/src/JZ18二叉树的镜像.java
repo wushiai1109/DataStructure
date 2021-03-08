@@ -34,40 +34,48 @@ public class JZ18二叉树的镜像 {
 
     }
 
-    public void Mirror(TreeNode root) {
-        if(root == null){
-            return;
+    /// Recursive
+/// Time Complexity: O(n), where n is the node's number of the tree
+/// Space Complexity: O(h), where h is the height of the tree
+    public TreeNode Mirror(TreeNode pRoot) {
+        if (pRoot == null) {
+            return null;
         }
 
-        TreeNode left = mirrorTree(root.left);
-        TreeNode right = mirrorTree(root.right);
+        TreeNode left = Mirror(pRoot.left);
+        TreeNode right = Mirror(pRoot.right);
 
-        root.left = right;
-        root.right = left;
+        pRoot.left = right;
+        pRoot.right = left;
 
+        return pRoot;
     }
 
-    private TreeNode mirrorTree(TreeNode root){
-        if(root == null){
+    /// Non-Recursive
+/// Time Complexity: O(n), where n is the node's number of the tree
+/// Space Complexity: O(h), where h is the height of the tree
+    public TreeNode Mirror1(TreeNode pRoot) {
+
+        if (pRoot == null) {
             return null;
         }
 
         LinkedList<TreeNode> queue = new LinkedList<>();
-        queue.addLast(root);
-        while(!queue.isEmpty()){
+        queue.addLast(pRoot);
+        while (!queue.isEmpty()) {
             TreeNode curNode = queue.removeFirst();
 
             TreeNode tempNode = curNode.left;
             curNode.left = curNode.right;
             curNode.right = tempNode;
 
-            if(curNode.left != null){
+            if (curNode.left != null) {
                 queue.addLast(curNode.left);
             }
-            if(curNode.right != null){
-                queue.addLast(curNode.right);
+            if (curNode.right != null) {
+                queue.push(curNode.right);
             }
         }
-        return root;
+        return pRoot;
     }
 }

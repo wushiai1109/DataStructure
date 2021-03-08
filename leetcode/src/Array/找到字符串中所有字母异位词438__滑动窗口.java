@@ -58,21 +58,20 @@ public class 找到字符串中所有字母异位词438__滑动窗口 {
     public List<Integer> findAnagrams(String s, String p) {
 
         List<Integer> res = new ArrayList<>();
-
-        if (s.length() < p.length())
+        if (s.length() < p.length()) {
             return res;
+        }
 
         //记录p的每个字符和出现的次数
         Map<Character, Integer> freq_p = new HashMap<>();
-        for (char c : p.toCharArray())
+        for (char c : p.toCharArray()) {
             freq_p.put(c, freq_p.getOrDefault(c, 0) + 1);
+        }
 
         //记录s的每个字符和出现的次数
         Map<Character, Integer> freq_s = new HashMap<>();
-
         //先使得滑动窗口s[l...r]里面元素为0，所以我们初始化r=-1
         int l = 0, r = -1;
-
         while (r + 1 < s.length()) {
             r++;
             freq_s.put(s.charAt(r), freq_s.getOrDefault(s.charAt(r), 0) + 1);
@@ -80,17 +79,19 @@ public class 找到字符串中所有字母异位词438__滑动窗口 {
                 freq_s.put(s.charAt(l), freq_s.get(s.charAt(l)) - 1);
                 l++;
             }
-
-            if (r - l + 1 == p.length() && isSame(freq_s, freq_p))
+            if (r - l + 1 == p.length() && isSame(freq_s, freq_p)) {
                 res.add(l);
+            }
         }
         return res;
     }
 
     private boolean isSame(Map<Character, Integer> freq_s, Map<Character, Integer> freq_p) {
-        for (Character ch : freq_p.keySet())
-            if (freq_s.get(ch) == null || (int) freq_s.get(ch) != freq_p.get(ch))
+        for (Character ch : freq_p.keySet()) {
+            if (freq_s.get(ch) == null || (int) freq_s.get(ch) != freq_p.get(ch)) {
                 return false;
+            }
+        }
         return true;
     }
 }
